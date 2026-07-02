@@ -10,6 +10,14 @@ Reona is a terminal-based satellite mission HUD built with Rust, Ratatui, and Cr
 - Satellite tracking mode that requests 40 future positions, moves the satellite along that feed, and refreshes the tracking window before it expires.
 - Configurable N2YO/Open-Meteo URLs, timeouts, search radius, and satellite category.
 
+## Screenshots
+
+![Reona mission HUD](.github/assets/reona-hud.png)
+
+![Reona orbital contacts](.github/assets/reona-contacts.png)
+
+![Reona satellite tracking](.github/assets/reona-tracking.png)
+
 ## Requirements
 
 - Rust stable with edition 2024 support.
