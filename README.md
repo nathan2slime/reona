@@ -1,4 +1,5 @@
 # Reona
+![Repobeats analytics image](https://repobeats.axiom.co/api/embed/e1b67d7294283fba523abf6be5937175698d8b1f.svg "Repobeats analytics image")
 
 Reona is a terminal-based satellite mission HUD built with Rust, Ratatui, and Crossterm. It lets you pick an observer position on a rotating globe, scan nearby orbital contacts through N2YO, and track a selected satellite with a target-following orbital view.
 
@@ -17,10 +18,6 @@ Reona is a terminal-based satellite mission HUD built with Rust, Ratatui, and Cr
 ![Reona orbital contacts](.github/assets/reona-contacts.png)
 
 ![Reona satellite tracking](.github/assets/reona-tracking.png)
-
-## Stats
-
-![Repobeats analytics image](https://repobeats.axiom.co/api/embed/e1b67d7294283fba523abf6be5937175698d8b1f.svg "Repobeats analytics image")
 
 ## Requirements
 
