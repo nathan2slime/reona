@@ -18,6 +18,10 @@ Reona is a terminal-based satellite mission HUD built with Rust, Ratatui, and Cr
 
 ![Reona satellite tracking](.github/assets/reona-tracking.png)
 
+## Stats
+
+![Repobeats analytics image](https://repobeats.axiom.co/api/embed/e1b67d7294283fba523abf6be5937175698d8b1f.svg "Repobeats analytics image")
+
 ## Requirements
 
 - Rust stable with edition 2024 support.
