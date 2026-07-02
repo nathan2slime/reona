@@ -65,7 +65,11 @@ fn main() -> std::io::Result<()> {
         app.refresh_tracking_if_needed();
         let elapsed = start.elapsed().as_secs_f64();
         let rotation = elapsed * 0.25;
-        let render_rotation = if app.tracking { 0.0 } else { rotation };
+        let render_rotation = if app.tracking {
+            tracking_rotation(&app).unwrap_or(rotation)
+        } else {
+            rotation
+        };
         let mut geometry = ui::GlobeGeometry::default();
         terminal.terminal.draw(|frame| {
             geometry = ui::render(frame, &app, render_rotation);
@@ -119,4 +123,13 @@ fn main() -> std::io::Result<()> {
     }
 
     Ok(())
+}
+
+fn tracking_rotation(app: &App) -> Option<f64> {
+    let lon = app
+        .current_tracking_position()
+        .map(|position| position.lon)
+        .or_else(|| app.selected_satellite().map(|satellite| satellite.lon))?;
+
+    Some(-lon.to_radians())
 }

@@ -1,6 +1,7 @@
 # Reona
+![Repobeats analytics image](https://repobeats.axiom.co/api/embed/e1b67d7294283fba523abf6be5937175698d8b1f.svg "Repobeats analytics image")
 
-Reona is a terminal-based satellite mission HUD built with Rust, Ratatui, and Crossterm. It lets you pick an observer position on a rotating globe, scan nearby orbital contacts through N2YO, and track a selected satellite with a fixed-globe orbital view.
+Reona is a terminal-based satellite mission HUD built with Rust, Ratatui, and Crossterm. It lets you pick an observer position on a rotating globe, scan nearby orbital contacts through N2YO, and track a selected satellite with a target-following orbital view.
 
 ## Features
 
@@ -9,6 +10,14 @@ Reona is a terminal-based satellite mission HUD built with Rust, Ratatui, and Cr
 - Nearby satellite discovery through direct N2YO API calls.
 - Satellite tracking mode that requests 40 future positions, moves the satellite along that feed, and refreshes the tracking window before it expires.
 - Configurable N2YO/Open-Meteo URLs, timeouts, search radius, and satellite category.
+
+## Screenshots
+
+![Reona mission HUD](.github/assets/reona-hud.png)
+
+![Reona orbital contacts](.github/assets/reona-contacts.png)
+
+![Reona satellite tracking](.github/assets/reona-tracking.png)
 
 ## Requirements
 
@@ -77,7 +86,7 @@ When tracking starts, Reona requests the next 40 seconds of positions for the se
 positions/{satid}/{lat}/{lon}/{alt}/{seconds}/
 ```
 
-The globe remains fixed during tracking. Reona interpolates the current satellite position from the returned timestamps, draws the future path, and refreshes the next 40-second window 5 seconds before the current feed expires.
+The globe follows the target longitude during tracking so the selected satellite stays visible. Reona interpolates the current satellite position from the returned timestamps, draws the future path, and refreshes the next 40-second window 5 seconds before the current feed expires.
 
 ## Development
 

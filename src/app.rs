@@ -5,7 +5,7 @@ use crate::{
     config::env::AppConfig,
 };
 
-pub const MAX_LISTED_SATELLITES: usize = 10;
+pub const MAX_LISTED_SATELLITES: usize = 20;
 const TRACKING_WINDOW_SECONDS: u16 = 40;
 const TRACKING_REFRESH_LEAD_SECONDS: u64 = 5;
 const TRACKING_RETRY_SECONDS: u64 = 5;
