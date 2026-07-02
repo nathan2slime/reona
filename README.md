@@ -1,6 +1,6 @@
 # Reona
 
-Reona is a terminal-based satellite mission HUD built with Rust, Ratatui, and Crossterm. It lets you pick an observer position on a rotating globe, scan nearby orbital contacts through N2YO, and track a selected satellite with a fixed-globe orbital view.
+Reona is a terminal-based satellite mission HUD built with Rust, Ratatui, and Crossterm. It lets you pick an observer position on a rotating globe, scan nearby orbital contacts through N2YO, and track a selected satellite with a target-following orbital view.
 
 ## Features
 
@@ -77,7 +77,7 @@ When tracking starts, Reona requests the next 40 seconds of positions for the se
 positions/{satid}/{lat}/{lon}/{alt}/{seconds}/
 ```
 
-The globe remains fixed during tracking. Reona interpolates the current satellite position from the returned timestamps, draws the future path, and refreshes the next 40-second window 5 seconds before the current feed expires.
+The globe follows the target longitude during tracking so the selected satellite stays visible. Reona interpolates the current satellite position from the returned timestamps, draws the future path, and refreshes the next 40-second window 5 seconds before the current feed expires.
 
 ## Development
 
